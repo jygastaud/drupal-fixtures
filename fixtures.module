@@ -48,7 +48,7 @@ function fixtures_menu() {
 function _fixtures_load_spyc_library() {
   // @TODO check if the spyc library is installed.  Throw error in system report if the spyc library is missing
   $lib_dir = libraries_get_path('spyc');
-  include_once($lib_dir . '/spyc.php');
+  include_once($lib_dir . '/Spyc.php');
 }
 
 function fixtures_load_yaml($path) {
@@ -62,6 +62,8 @@ function fixtures_load_yaml($path) {
 function fixtures_get_fixtures($type) {
   // @todo make this function also search the sites/[domain] folders, now it's only looking in sites/all
   $fixtures = array();
+
+
   $directory = 'sites/all/fixtures';
   if (is_dir($directory) && $handle = opendir($directory)) {
     while (($file = readdir($handle)) !== FALSE) {

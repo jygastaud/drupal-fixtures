@@ -5,3 +5,4 @@ version = VERSION
 
 # I need the libraries module to properly integrate the spyc library
 dependencies[] = libraries
+dependencies[] = entity
