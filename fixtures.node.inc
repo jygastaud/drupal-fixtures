@@ -53,7 +53,9 @@ function fixtures_create_node($node_array) {
   if (isset($node_array['created'])) {
     $entity->created = strtotime($node_array['created']);
   }
-  // @todo: it looks like we can defined the "changed" date. Need to check more.
+
+  // @todo: it looks like we can't defined the "changed" date. Need to check more.
+
   // Set Language.
   if (isset($node_array['lang'])) {
     $entity->language = $node_array['lang'];

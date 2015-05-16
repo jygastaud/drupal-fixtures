@@ -23,7 +23,7 @@ function hook_fixtures_create_node_default_alter(&$datas) {
 
 
 /**
- * @param $data array
+ * @param $datas array
  */
 function hook_fixtures_create_node_fields_alter(&$datas) {
   // Load node information.

@@ -63,12 +63,12 @@ function fixtures_get_fixtures($type) {
   // @todo make this function also search the sites/[domain] folders, now it's only looking in sites/all
   $fixtures = array();
 
-
   $directory = 'sites/all/fixtures';
   if (is_dir($directory) && $handle = opendir($directory)) {
     while (($file = readdir($handle)) !== FALSE) {
       $file_array = explode('.', $file);
-      if (end($file_array) == 'yaml') {
+      $file_allowed_formats = array('yaml', 'yml');
+      if (in_array(end($file_array), $file_allowed_formats)) {
         $filename_parts = explode('--', reset($file_array));
         if ($filename_parts[0] === $type) {
           $yaml_file = $directory . '/' . $file;
@@ -78,5 +78,6 @@ function fixtures_get_fixtures($type) {
     }
     closedir($handle);
   }
+
   return $fixtures;
 }
