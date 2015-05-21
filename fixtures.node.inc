@@ -22,7 +22,7 @@ function fixtures_create_node($node_array) {
   $values = array(
     'type'    => $node_array['type'],
     'uid'     => $node_array['uid'] ? $node_array['uid'] : 1,
-    'status'  => $node_array['status'] ? $node_array['status'] : 1,
+    'status'  => $node_array['status'] ? $node_array['status'] : 0,
     'promote' => $node_array['promote'] ? $node_array['promote'] : 0,
     'path'    => array('alias'     => $node_array['path'] ? $node_array['path'] : NULL,
                        'pathauto'  => $node_array['path'] ? FALSE : TRUE)
