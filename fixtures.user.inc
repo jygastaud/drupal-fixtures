@@ -7,7 +7,7 @@ function fixtures_create_users() {
   $fixtures = fixtures_get_fixtures('user');
   foreach ($fixtures as $fixture) {
     foreach ($fixture as $user_name => $user_array) {
-      $user = fixture_create_user($user_array);
+      $user = fixtures_create_user($user_array);
     }
   }
   return "debugging fixtures";
@@ -16,7 +16,7 @@ function fixtures_create_users() {
 /**`
  * Create single user from YAML array
  */
-function fixture_create_user($user_array) {
+function fixtures_create_user($user_array) {
   require_once DRUPAL_ROOT . '/' . variable_get('password_inc', 'includes/password.inc');
   $user = new stdClass();
   $user->name = $user_array['name'];
